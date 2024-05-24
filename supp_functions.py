@@ -55,7 +55,7 @@ def build_inputs(num_steps, num_classes, n_input):
     
     num_steps: number of time steps in each sequence (2nd dimension)
     '''
-    inputs = tf.placeholder(tf.float32, shape=(None, num_steps, n_input), name='inputs')
+    inputs = tf.compat.v1.placeholder(tf.float32, shape=(None, num_steps, n_input), name='inputs')
     targets = tf.placeholder(tf.float32, shape=(None, num_classes), name='targets')
 
     # add the keep_prob

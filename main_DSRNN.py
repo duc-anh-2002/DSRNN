@@ -4,7 +4,7 @@ from tqdm import tqdm
 import time
 import os
 
-os.chdir('/Codes')
+# os.chdir('Codes/')
 from supp_functions import get_batches, load_data
 from DSRNN_class import DSRNN
 
@@ -19,7 +19,7 @@ save_records    = True # Save all DSRNN performance records
 num_trials = 5
 
 # Choose which dataset to run on (e.g. double pendulum (DP) or MNIST)
-dataset = 'DP' # Can accomadte DP and MNIST
+dataset = 'MNIST' # Can accomadte DP and MNIST
 forecast_steps = 20 # Choose either [1, 5, 10, 15, 20] for DP
 seq_len = 10 # Length of the input sequence
 
@@ -27,10 +27,10 @@ only_dynamic_joints = True # (Only for DP dataset): If False then also the fixed
 
 
 #%% Directories for where data is saved, and where to save results of DSRNN
-
-dir_data = '/double-pendulum-chaotic/train_and_test_split/dpc_dataset_traintest_4_200_csv/RNN_traintest/seqlen_'
-dir_results = '/Results/DP'
-
+home_dir = '/home/ubuntu/workspace/dataset'
+dir_data = home_dir + '/double-pendulum-chaotic/train_and_test_split/dpc_dataset_traintest_4_200_csv/RNN_traintest/seqlen_'
+dir_results = home_dir + '/Results/MNIST_DSRNN'
+dir_results_DP = home_dir + '/Results/DP'
 
 #%% Parameters
 
